@@ -31,7 +31,7 @@ fn update_commit_push() {
         .output()
         .expect("Failed to execute git push command");
     if !push_command.status.success() {
-        eprintln!("Error: Failed to push changes to remote.");
+        eprintln!("Error: Failed to push changes.");
         exit(1);
     }
 
