@@ -23,7 +23,6 @@ fn update_commit_push() {
         .expect("Failed to execute git commit command");
     if !commit_command.status.success() {
         eprintln!("Error: Failed to commit changes.");
-        exit(1);
     }
 
     // git push
