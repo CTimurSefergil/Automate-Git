@@ -4,7 +4,7 @@ use std::process::{exit, Command};
 fn update_commit_push() {
     let add_command = Command::new("git")
         .arg("add")
-        .arg("-A")
+        .arg(".")
         .output()
         .expect("Failed to execute git add command");
 
@@ -15,7 +15,7 @@ fn update_commit_push() {
 
     let commit_command = Command::new("git")
         .arg("commit")
-        // .arg("-a")
+        .arg("-a")
         .arg("-m")
         .arg(name_generator())
         .output()
@@ -28,8 +28,6 @@ fn update_commit_push() {
 
     let push_command = Command::new("git")
         .arg("push")
-        .arg("origin")
-        .arg("master")
         .output()
         .expect("Failed to execute git push command");
 
