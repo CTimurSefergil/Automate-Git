@@ -2,7 +2,6 @@ use names::Generator;
 use std::process::{exit, Command};
 
 fn update_commit_push() {
-    // Command 1: Add all files recursively to git repo
     let add_command = Command::new("git")
         .arg("add")
         .arg("-A")
@@ -14,7 +13,6 @@ fn update_commit_push() {
         exit(1);
     }
 
-    // Command 2: Commit all changes
     let commit_command = Command::new("git")
         .arg("commit")
         // .arg("-a")
@@ -28,7 +26,6 @@ fn update_commit_push() {
         exit(1);
     }
 
-    // Command 3: Push to remote (origin main)
     let push_command = Command::new("git")
         .arg("push")
         .arg("origin")
